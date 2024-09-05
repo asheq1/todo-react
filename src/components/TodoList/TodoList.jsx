@@ -1,4 +1,5 @@
 import Todoitem from "../TodoItem/Todoitem";
+import PropTypes from 'prop-types';
 
 const TodoList = ({ todos, markComplete, deleteTodo }) => {
     return (
@@ -15,5 +16,11 @@ const TodoList = ({ todos, markComplete, deleteTodo }) => {
       </div>
     );
   };
+
+TodoList.propTypes = {
+    todos: PropTypes.object.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    deleteTodo: PropTypes.func.isRequired 
+}
 
 export default TodoList;

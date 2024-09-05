@@ -1,0 +1,20 @@
+.filter-btn {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+  
+.filter-btn.active {
+    background-color: #4caf50;
+    color: white;
+}
+  
+.filter-btn:hover {
+    background-color: #ddd;
+}
+
+  

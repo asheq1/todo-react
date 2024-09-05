@@ -38,11 +38,8 @@ const TodoForm = ({addTodo}) => {
     );
 };
 
-
-TodoForm.proptypes = {
-    
-
+TodoForm.propTypes = {
+    addTodo: PropTypes.object.isRequired
 }
-
 
 export default TodoForm;
