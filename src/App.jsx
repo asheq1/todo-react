@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import TodoForm from './components/TodoForm/TodoForm'
 import TodoList from './components/TodoList/TodoList'
@@ -25,6 +25,20 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('All');
 
+  // Load todos from localStorage 
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos'));
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
+
+  // Save todos to localStorage 
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
+  }, [todos]);
 
   const addTodo = text => {
     const currentDueTime = formatDateTime(); // generate time
@@ -47,6 +61,9 @@ function App() {
   const deleteTodo = index => {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos)
+
+    // update LS after deleting the todo
+    localStorage.setItem('todos', JSON.stringify(newTodos))
   }
 
   // filtering logic
