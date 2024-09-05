@@ -1,10 +1,19 @@
+import Todoitem from "../TodoItem/Todoitem";
 
-const TodoList = () => {
+const TodoList = ({ todos, markComplete, deleteTodo }) => {
     return (
-        <div>
-            
-        </div>
+      <div>
+        {todos.map((todo, index) => (
+          <Todoitem
+            key={index}
+            index={index}
+            todo={todo}
+            markComplete={markComplete}
+            deleteTodo={deleteTodo}
+          />
+        ))}
+      </div>
     );
-};
+  };
 
 export default TodoList;
