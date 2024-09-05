@@ -21,6 +21,12 @@ function App() {
     setTodos(newTodos)
   }
 
+  const editTodo = (index, newText) => {
+    const newTodos = [...todos];
+    newTodos[index].text = newText;
+    setTodos(newTodos)
+  }
+
   const deleteTodo = index => {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos)
@@ -41,10 +47,16 @@ function App() {
       <h1>Todo App</h1>
       <div className='App'>
           <TodoForm addTodo={addTodo}></TodoForm>
-          {/* conditionally render the filter btns  */}
+          
+          {/* conditionally render the filter btns  */}      
           {todos.length > 0 && <TodoFilter
             filter={filter} setFilter={setFilter}></TodoFilter>}
-          <TodoList todos={filteredTodos} markComplete={markComplete} deleteTodo={deleteTodo}></TodoList>
+          
+          <TodoList todos={filteredTodos} 
+              markComplete={markComplete} 
+              editTodo={editTodo}
+              deleteTodo={deleteTodo}
+              ></TodoList>
       </div>
     </>
   )

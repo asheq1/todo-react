@@ -1,7 +1,7 @@
 import Todoitem from "../TodoItem/Todoitem";
 import PropTypes from 'prop-types';
 
-const TodoList = ({ todos, markComplete, deleteTodo }) => {
+const TodoList = ({ todos, editTodo, markComplete, deleteTodo }) => {
     return (
       <div>
         {todos.map((todo, index) => (
@@ -11,6 +11,7 @@ const TodoList = ({ todos, markComplete, deleteTodo }) => {
             todo={todo}
             markComplete={markComplete}
             deleteTodo={deleteTodo}
+            editTodo={editTodo}
           />
         ))}
       </div>

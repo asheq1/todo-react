@@ -6,7 +6,11 @@ Delete Todos
 Mark as Complete
 List Filtering
 
-
+## Intermediate Features
+Edit Todos
+Persist Data
+Due Date
+Responsive Design 
 
 
 
