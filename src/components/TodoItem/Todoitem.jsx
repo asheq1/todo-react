@@ -34,6 +34,12 @@ const Todoitem = ({ todo, index, markComplete, deleteTodo, editTodo }) => {
                 </span>
               )}
 
+             {/* Display Due time   */}
+             <div className='due-time'>
+                <p>{todo.dueTime}</p>
+             </div>   
+
+
             <div className="todo-actions">
                 {
                   isEditing ? (

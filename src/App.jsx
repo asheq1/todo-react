@@ -6,12 +6,29 @@ import './styles/App.css'
 import TodoFilter from './components/TodoFilter/TodoFilter'
 
 
+// Helper function to format the current time
+const formatDateTime = () =>{
+  const now = new Date();
+  const options = {
+      month: 'numeric',
+      day: 'numeric',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true
+  };
+  return now.toLocaleString('en-US', options).replace(/,/, '');
+};
+
+
 function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('All');
 
+
   const addTodo = text => {
-    const newTodos = [...todos, {text, isComplete: false}]
+    const currentDueTime = formatDateTime(); // generate time
+    const newTodos = [...todos, {text, isComplete: false, dueTime: currentDueTime}]
     setTodos(newTodos)
   }
 
@@ -42,6 +59,7 @@ function App() {
       return true; // All
   })
 
+
   return (
     <>
       <h1>Todo App</h1>
@@ -51,7 +69,7 @@ function App() {
           {/* conditionally render the filter btns  */}      
           {todos.length > 0 && <TodoFilter
             filter={filter} setFilter={setFilter}></TodoFilter>}
-          
+
           <TodoList todos={filteredTodos} 
               markComplete={markComplete} 
               editTodo={editTodo}
