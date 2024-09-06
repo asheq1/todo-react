@@ -1,16 +1,16 @@
 # Todo project with React
 
 ## Basic features
-Add Todos
-Delete Todos
-Mark as Complete
-List Filtering
+1. Add Todos
+2. Delete Todos
+3. Mark as Complete
+4. List Filtering
 
 ## Intermediate Features
-Edit Todos
-Persist Data
-Due Date
-Responsive Design 
+1. Edit Todos
+2. Persist Data
+3. Due Date
+4. Responsive Design 
 
 
 

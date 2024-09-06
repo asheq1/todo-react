@@ -17,4 +17,8 @@
     background-color: #ddd;
 }
 
-  
+@media (max-width: 600px){
+    .filter-btn {
+        width: 50%;
+    }
+}

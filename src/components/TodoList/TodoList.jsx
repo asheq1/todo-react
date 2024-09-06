@@ -21,7 +21,8 @@ const TodoList = ({ todos, editTodo, markComplete, deleteTodo }) => {
 TodoList.propTypes = {
     todos: PropTypes.object.isRequired,
     markComplete: PropTypes.func.isRequired,
-    deleteTodo: PropTypes.func.isRequired 
+    deleteTodo: PropTypes.func.isRequired,
+    editTodo: PropTypes.object.isRequired 
 }
 
 export default TodoList;

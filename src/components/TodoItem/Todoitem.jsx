@@ -43,16 +43,16 @@ const Todoitem = ({ todo, index, markComplete, deleteTodo, editTodo }) => {
             <div className="todo-actions">
                 {
                   isEditing ? (
-                    <button onClick={handleSave}>
+                    <button onClick={handleSave} className='save-btn'>
                         <img src={Save} alt="Save" />
                     </button>
                   ) : (
-                    <button onClick={() => setEditing(true)}>
+                    <button onClick={() => setEditing(true)} className='edit-btn'>
                       <img src={Edit} alt="Edit todo" />
                     </button>
                   )}
 
-                <button onClick={() => markComplete(index)}>
+                <button onClick={() => markComplete(index)} className='delete-btn'>
                   <img src={Done} alt="Mark Complete" />
                 </button>
                 <button onClick={() => deleteTodo(index)}>
@@ -67,7 +67,9 @@ Todoitem.propTypes = {
     todo: PropTypes.array.isRequired,
     index: PropTypes.array.isRequired,
     markComplete: PropTypes.func.isRequired,
-    deleteTodo: PropTypes.func.isRequired
+    deleteTodo: PropTypes.func.isRequired,
+    editTodo: PropTypes.object.isRequired
+
 }
 
 export default Todoitem;

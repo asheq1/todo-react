@@ -29,7 +29,7 @@ const TodoForm = ({addTodo}) => {
                     onChange ={(e)=> setTodo(e.target.value)}
                     placeholder='Add a new task...'
                     />
-                <button type="submit">Add</button>
+                <button type="submit">Add Todo</button>
             </form>
 
             {/* Display error message if come  */}
